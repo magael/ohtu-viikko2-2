@@ -14,6 +14,14 @@ public class Kauppa {
         this.viitegeneraattori = viitegeneraattori;
         kaupanTili = "33333-44455";
     }
+    
+    public Kauppa(){
+        IKirjanpito kirjanpito = new Kirjanpito();
+        this.varasto = new Varasto(kirjanpito);
+        this.pankki = new Pankki(kirjanpito);
+        this.viitegeneraattori = new Viitegeneraattori();
+        kaupanTili = "33333-44455";
+    }
 
     public void aloitaAsiointi() {
         ostoskori = new Ostoskori();
